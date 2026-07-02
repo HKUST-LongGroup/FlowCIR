@@ -1,0 +1,283 @@
+/* FlowCIR project page - companion styles for Bulma */
+
+:root {
+  --flow-teal: #0f8b8d;
+  --flow-green: #2e9d68;
+  --flow-coral: #d85c4a;
+  --flow-ink: #2f3437;
+  --flow-muted: #60686d;
+  --flow-line: #e6ecef;
+  --flow-soft: #f6faf9;
+}
+
+body {
+  font-family: 'Noto Sans', 'Google Sans', sans-serif;
+  color: var(--flow-ink);
+  background: #ffffff;
+}
+
+a {
+  color: var(--flow-teal);
+}
+
+.flow-hero {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f5fbfa 72%, #ffffff 100%);
+}
+
+.publication-title {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.publication-title .flow-mark,
+b.fig-keyword {
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--flow-teal), var(--flow-green), var(--flow-coral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  line-height: 1.55;
+}
+
+.author-block {
+  white-space: nowrap;
+}
+
+.affiliation-block {
+  margin-top: 0.55rem;
+  color: var(--flow-muted);
+}
+
+.publication-links {
+  margin-top: 1.2rem;
+}
+
+.publication-links .button {
+  border-radius: 999px;
+  margin: 0.2rem 0.15rem;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+
+.publication-links .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 45, 50, 0.16);
+  background: #1f2b2d;
+}
+
+.teaser .hero-body {
+  padding-top: 0.5rem;
+}
+
+.compact-section {
+  padding-top: 1.3rem;
+}
+
+.section-title {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-weight: 500 !important;
+  letter-spacing: 0;
+}
+
+.content p {
+  line-height: 1.72;
+}
+
+figure.fig {
+  margin: 0;
+}
+
+figure.fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid var(--flow-line);
+  background: #ffffff;
+}
+
+figure.fig figcaption {
+  color: var(--flow-muted);
+  font-size: 0.93rem;
+  line-height: 1.48;
+  margin-top: 0.7rem;
+}
+
+.contributions-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 860px;
+}
+
+.contributions-list li {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 0.78rem 0;
+  border-bottom: 1px solid var(--flow-line);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.contributions-list li:last-child {
+  border-bottom: none;
+}
+
+.contrib-num {
+  flex: 0 0 auto;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--flow-teal), var(--flow-coral));
+  margin-top: 0.05rem;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+.method-card,
+.metric-card {
+  border: 1px solid var(--flow-line);
+  border-radius: 8px;
+  background: var(--flow-soft);
+  padding: 1rem;
+}
+
+.method-card h3 {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.method-card p {
+  color: var(--flow-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  margin-bottom: 0.55rem;
+}
+
+.method-card code {
+  color: #14383a;
+  background: #eaf5f2;
+  border: 1px solid #d7ebe6;
+  border-radius: 4px;
+  font-size: 0.86rem;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.metric-card {
+  min-height: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.metric-value {
+  color: var(--flow-teal);
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.metric-label {
+  color: var(--flow-muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  margin-top: 0.4rem;
+}
+
+.cost-figure img {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.result-row {
+  margin-top: 1.5rem;
+}
+
+.bibtex-block pre {
+  background: #f5f7f8;
+  border: 1px solid var(--flow-line);
+  border-radius: 8px;
+  color: #25292b;
+  font-size: 0.86rem;
+  overflow-x: auto;
+  padding: 1.1rem 1.25rem;
+  text-align: left;
+}
+
+b,
+strong {
+  font-weight: 650;
+}
+
+.footer {
+  background: #f6faf9;
+  color: var(--flow-muted);
+  padding: 2rem 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .publication-title {
+    font-size: 1.9rem !important;
+  }
+
+  .publication-authors {
+    font-size: 1rem !important;
+  }
+
+  .author-block {
+    white-space: normal;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    min-height: 5.8rem;
+  }
+
+  .metric-value {
+    font-size: 1.7rem;
+  }
+
+  figure.fig figcaption {
+    font-size: 0.88rem;
+  }
+}

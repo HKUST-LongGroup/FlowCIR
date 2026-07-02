@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlowCIR: Semantic Transport via Flow Matching for Zero-Shot Composed Image Retrieval</title>
+  <meta name="description" content="FlowCIR formulates zero-shot composed image retrieval as conditional semantic transport via flow matching.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<section class="hero flow-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+            <span class="flow-mark">FlowCIR</span>: Semantic Transport via Flow Matching<br>
+            for Zero-Shot Composed Image Retrieval
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://zhenqi-he.github.io/" target="_blank" rel="noopener">Zhenqi He</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://ziqi-jiang.github.io/" target="_blank" rel="noopener">Ziqi Jiang</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=GHTB15QAAAAJ" target="_blank" rel="noopener">Yuanpei Liu</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://wang-yanghao.github.io/" target="_blank" rel="noopener">Yanghao Wang</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=T8yTNs0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Teng Wang</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://zjuchenlong.github.io" target="_blank" rel="noopener">Long Chen</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors affiliation-block">
+            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology</span>
+            <span class="author-block"><sup>2</sup>The University of Hong Kong</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <span class="button is-dark is-rounded">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </span>
+              </span>
+              <span class="link-block">
+                <a href="https://hkust-longgroup.github.io/FlowCIR" target="_blank" rel="noopener" class="button is-dark is-rounded">
+                  <span class="icon"><i class="fas fa-globe"></i></span>
+                  <span>Project</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#bibtex" class="button is-dark is-rounded">
+                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure class="fig">
+        <img src="static/images/teaser.png" alt="FlowCIR compares textual inversion with conditional semantic transport">
+        <figcaption>
+          <b class="fig-keyword">Overview.</b> Zero-shot CIR asks a model to retrieve a target image from a reference image and a relative instruction. FlowCIR moves beyond textual inversion by learning a reference-conditioned transport path in VLM embedding space.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            FlowCIR studies zero-shot composed image retrieval, where a target image is retrieved by applying a natural-language edit to a reference image without domain-specific CIR triplets. Instead of compressing the reference image into pseudo-text tokens, FlowCIR treats composition as conditional semantic transport: a lightweight flow-matching module transports the relative-instruction embedding toward a target-aligned query embedding under the reference-image condition. The image and text encoders stay frozen, making training efficient on pre-extracted VLM features. To address negation and removal queries, FlowCIR also introduces an inference-only Multi-Negative Steering strategy that pushes the instruction representation away from negated concepts before retrieval.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section compact-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Highlights</h2>
+    <ul class="contributions-list">
+      <li>
+        <span class="contrib-num">1</span>
+        <span><b>Conditional semantic transport.</b> FlowCIR reframes zero-shot CIR as transporting the instruction embedding toward target text semantics, conditioned on the reference image.</span>
+      </li>
+      <li>
+        <span class="contrib-num">2</span>
+        <span><b>Flow matching for composition.</b> A time-conditioned velocity field learns the semantic transition from relative text to target-oriented query, rather than relying on static token fusion.</span>
+      </li>
+      <li>
+        <span class="contrib-num">3</span>
+        <span><b>Training-efficient pipeline.</b> The VLM image and text encoders are frozen; only a compact transport module is trained on pre-extracted embeddings.</span>
+      </li>
+      <li>
+        <span class="contrib-num">4</span>
+        <span><b>Negation-aware inference.</b> Multi-Negative Steering improves removal and negation-heavy queries by steering the composed representation away from undesired semantics.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section compact-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Method</h2>
+    <figure class="fig">
+      <img src="static/images/method.png" alt="FlowCIR training and inference framework">
+      <figcaption>
+        <b class="fig-keyword">Framework.</b> During training, FlowCIR constructs a linear path between the relative-instruction embedding and the target-text embedding, then regresses the conditional velocity under the reference-image condition. During inference, a one-step transport produces a retrieval query for nearest-neighbor search.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section compact-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Main Results</h2>
+    <figure class="fig">
+      <img src="static/images/main_results.png" alt="CIRR and CIRCO quantitative comparison">
+      <figcaption>
+        <b class="fig-keyword">CIRR and CIRCO.</b> FlowCIR achieves strong zero-shot CIR performance while using a much smaller training budget than many textual-inversion and generative baselines.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section compact-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Qualitative Retrieval</h2>
+    <figure class="fig">
+      <img src="static/images/qualitative.png" alt="FlowCIR qualitative retrieval examples">
+      <figcaption>
+        <b class="fig-keyword">Qualitative examples.</b> The same relative instruction can lead to different retrieved targets depending on the reference image. Multi-Negative Steering further improves retrieval behavior for removal-heavy queries.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop bibtex-block">
+    <h2 class="title is-3 section-title">BibTeX</h2>
+    <pre><code>@misc{he2026flowcir,
+  title  = {FlowCIR: Semantic Transport via Flow Matching for Zero-Shot Composed Image Retrieval},
+  author = {He, Zhenqi and Jiang, Ziqi and Liu, Yuanpei and Wang, Yanghao and Wang, Teng and Chen, Long},
+  year   = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered content">
+        <p>
+          This project page follows the lightweight Bulma/Nerfies-style academic template used by
+          <a href="https://github.com/HKUST-LongGroup/AVTok" target="_blank" rel="noopener">AVTok</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
