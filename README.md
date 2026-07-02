@@ -1,10 +1,14 @@
-# FlowCIR: Semantic Transport via Flow Matching for Zero-Shot Composed Image Retrieval
+<div align="center">
 
-## ECCV 2026
+<h1>FlowCIR: Semantic Transport via Flow Matching for Zero-Shot Composed Image Retrieval</h1>
 
-LONG Group, HKUST
+<h2>ECCV 2026</h2>
 
-Zhenqi He, Ziqi Jiang, Yuanpei Liu, Yanghao Wang, Teng Wang, Long Chen
+<p>LONG Group, HKUST</p>
+
+<p>Zhenqi He, Ziqi Jiang, Yuanpei Liu, Yanghao Wang, Teng Wang, Long Chen</p>
+
+</div>
 
 ## Citation
 
