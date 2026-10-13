@@ -15,6 +15,12 @@ pip install torch torchvision numpy pillow tqdm datasets transformers
 pip install git+https://github.com/openai/CLIP.git
 ```
 
+Run the following data preparation, training, validation, and submission commands from the code directory:
+
+```bash
+cd code
+```
+
 ## Data Preparation
 
 Download HQ-Edit and the target CIR datasets (CIRR, CIRCO, and Fashion-IQ). Configure the CIRR and CIRCO locations in `config.py`, or use environment variables:
@@ -73,7 +79,7 @@ This repository is developed in part based on *Exploring Cross-Modal Flows for F
 
 ## Citation
 
-If you find this work useful, please cite [flowcir.bib](flowcir.bib):
+If you find this work useful, please cite [flowcir.bib](code/flowcir.bib):
 
 ```bibtex
 @inproceedings{he2026flowcir,
