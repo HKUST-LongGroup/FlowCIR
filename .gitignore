@@ -1,0 +1,37 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.vscode
+
+# env
+.venv/
+venv/
+env/
+*.conda
+
+# logs & outputs
+logs/
+*.log
+wandb/
+runs/
+outputs/
+checkpoints/
+*.ckpt
+*.pth
+*.pt
+
+# datasets & caches
+data/
+datasets/
+*.zip
+*.tar
+*.tar.gz
+.cache/
+.huggingface/
+
+
